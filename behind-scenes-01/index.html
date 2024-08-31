@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Behind The Scenes</h1>
+    </header>
+    <!-- Template 1 -->
+    <section id="app">
+      <h2>How Vue Works</h2>
+      <!-- <input type="text" v-model="currentUserInput"> -->
+      <!-- <input type="text" @input="saveInput"> -->
+      
+      <!-- ref 속성은 HTML 속성이 아니라 Vue의 속성 -->
+      <!-- vue는 ref를 감지하고 내부에 이를 저장 -->
+      <input type="text" ref="userText">
+      <button @click="setText">Set Text</button>
+      <p>{{ message }}</p>
+    </section>
+    <!--// Template 1 -->
+    <!-- Template 2 -->
+    <section id="app2">
+      <!-- DOES NOT WORK: <p>{{ message }}</p> -->
+      <p>{{ favoriteMeal }}</p>
+    </section>
+    <!--// Template 2 -->
+  </body>
+</html>
