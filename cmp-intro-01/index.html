@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>FriendList</h1>
+    </header>
+    <section id="app">
+      <ul>
+        <!-- 컴포넌트 - 코드가 캡슐화되고 분리되기 때문에 프로젝트 규모가 큰 경우 코드 작업이 훨씬 수월 -->
+        <friend-contact 
+          v-for="friend in friends" 
+          :key="friend.id" 
+          :friend="friend"
+        ></friend-contact>
+      </ul>
+    </section>
+  </body>
+</html>
